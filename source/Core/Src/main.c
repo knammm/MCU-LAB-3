@@ -91,7 +91,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
-  int index = 0;
   setTimer(2, 10); // This timer will use for buffer
   setTimer7SEG(10);
   timerTraffic1 = durationRED / 1000;
@@ -107,8 +106,8 @@ int main(void)
 		}
 		if (timer7SEG == 1){
 			setTimer7SEG(250);
-			if (index >= 4) index = 0;
-			update7SEG(index++);
+			if (led_index >= 4) led_index = 0;
+			update7SEG(led_index++);
 		}
 		fsm_automatic_run();
 		fsm_manual_run();

@@ -9,13 +9,9 @@
 #include <handle_leds.h>
 
 int led_buffer[4] = {0, 0, 0, 0};
-void clear7SEGs(){
-	HAL_GPIO_WritePin(GPIOB, SEG1_0_Pin | SEG1_1_Pin | SEG1_2_Pin | SEG1_3_Pin | SEG1_4_Pin | SEG1_5_Pin |
-							SEG1_6_Pin, SET);
-}
-//void clearEN();
-void clearAllLEDs(){
-	HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin | LED_RED_2_Pin | LED_YELLOW_1_Pin | LED_YELLOW_2_Pin | LED_GREEN_1_Pin | LED_GREEN_2_Pin, RESET);
+
+void clearEN(){
+	HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN1_Pin | EN2_Pin | EN3_Pin, SET);
 }
 //void openAllLEDs();
 void blinkLEDs(int traffic, int color){

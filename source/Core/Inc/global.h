@@ -49,6 +49,7 @@ extern int RED_sec;
 extern int YELLOW_sec;
 extern int GREEN_sec;
 
+extern int led_index;
 extern int led_buffer[4];
 
 #endif /* INC_GLOBAL_H_ */

@@ -14,3 +14,5 @@ int timerTraffic2 = 0;
 int durationRED = 5000;
 int durationYELLOW = 2000;
 int durationGREEN = 3000;
+
+int led_index = 0;

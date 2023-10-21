@@ -10,7 +10,6 @@
 
 #include "global.h"
 
-void clearAllLEDs();
 void clear7SEGs();
 void clearEN();
 void blinkLEDs(int, int);
