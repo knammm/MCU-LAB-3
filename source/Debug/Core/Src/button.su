@@ -1,0 +1,9 @@
+button.c:37:6:subKeyProcess_Mode	4	static
+button.c:41:6:subKeyProcess_Add	4	static
+button.c:45:6:subKeyProcess_Set	4	static
+button.c:49:5:isButton_Mode_Pressed	4	static
+button.c:57:5:isButton_Add_Pressed	4	static
+button.c:65:5:isButton_Set_Pressed	4	static
+button.c:74:6:getKeyInput_Button_Mode	8	static
+button.c:98:6:getKeyInput_Button_Add	8	static
+button.c:122:6:getKeyInput_Button_Set	8	static

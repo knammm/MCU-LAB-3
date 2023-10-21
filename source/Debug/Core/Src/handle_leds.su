@@ -1,0 +1,7 @@
+handle_leds.c:12:6:clear7SEGs	8	static
+handle_leds.c:17:6:clearAllLEDs	8	static
+handle_leds.c:21:6:blinkLEDs	16	static
+handle_leds.c:60:6:Traffic_setColor	16	static
+handle_leds.c:100:6:display7SEG	16	static
+handle_leds.c:146:6:update7SEG	16	static
+handle_leds.c:173:6:updateBuffer	16	static

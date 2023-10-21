@@ -1,0 +1,5 @@
+handle7seg.c:16:6:display7SEG	16	static
+handle7seg.c:62:6:update7SEG	16	static
+handle7seg.c:89:6:updateBuffer_T1	16	static
+handle7seg.c:93:6:updateBuffer_T2	16	static
+handle7seg.c:98:6:Handle_7SEG	16	static
