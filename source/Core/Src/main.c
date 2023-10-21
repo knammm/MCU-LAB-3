@@ -20,7 +20,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "global.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -102,17 +101,17 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	if(timerFlag[2] == 1){
-		setTimer(2, 100);
-		updateBuffer(timerTraffic1, timerTraffic2);
-	}
-	if (timer7SEG == 1){
-		setTimer7SEG(250);
-		if (index >= 4) index = 0;
-		update7SEG(index++);
-	}
-	fsm_automatic_run();
-	fsm_manual_run();
+		if(timerFlag[2] == 1){
+			setTimer(2, 100);
+			updateBuffer(timerTraffic1, timerTraffic2);
+		}
+		if (timer7SEG == 1){
+			setTimer7SEG(250);
+			if (index >= 4) index = 0;
+			update7SEG(index++);
+		}
+		fsm_automatic_run();
+		fsm_manual_run();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -217,10 +216,8 @@ static void MX_GPIO_Init(void)
                           |LED_YELLOW_2_Pin|LED_GREEN_2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, SEG1_0_Pin|SEG1_1_Pin|SEG1_2_Pin|SEG2_3_Pin
-                          |SEG2_4_Pin|SEG2_5_Pin|SEG2_6_Pin|SEG1_3_Pin
-                          |SEG1_4_Pin|SEG1_5_Pin|SEG1_6_Pin|SEG2_0_Pin
-                          |SEG2_1_Pin|SEG2_2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, SEG1_0_Pin|SEG1_1_Pin|SEG1_2_Pin|SEG1_3_Pin
+                          |SEG1_4_Pin|SEG1_5_Pin|SEG1_6_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LED_RED_1_Pin LED_YELLOW_1_Pin LED_GREEN_1_Pin EN0_Pin
                            EN1_Pin EN2_Pin EN3_Pin LED_RED_2_Pin
@@ -233,14 +230,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SEG1_0_Pin SEG1_1_Pin SEG1_2_Pin SEG2_3_Pin
-                           SEG2_4_Pin SEG2_5_Pin SEG2_6_Pin SEG1_3_Pin
-                           SEG1_4_Pin SEG1_5_Pin SEG1_6_Pin SEG2_0_Pin
-                           SEG2_1_Pin SEG2_2_Pin */
-  GPIO_InitStruct.Pin = SEG1_0_Pin|SEG1_1_Pin|SEG1_2_Pin|SEG2_3_Pin
-                          |SEG2_4_Pin|SEG2_5_Pin|SEG2_6_Pin|SEG1_3_Pin
-                          |SEG1_4_Pin|SEG1_5_Pin|SEG1_6_Pin|SEG2_0_Pin
-                          |SEG2_1_Pin|SEG2_2_Pin;
+  /*Configure GPIO pins : SEG1_0_Pin SEG1_1_Pin SEG1_2_Pin SEG1_3_Pin
+                           SEG1_4_Pin SEG1_5_Pin SEG1_6_Pin */
+  GPIO_InitStruct.Pin = SEG1_0_Pin|SEG1_1_Pin|SEG1_2_Pin|SEG1_3_Pin
+                          |SEG1_4_Pin|SEG1_5_Pin|SEG1_6_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

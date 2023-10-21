@@ -11,7 +11,7 @@
 int led_buffer[4] = {0, 0, 0, 0};
 void clear7SEGs(){
 	HAL_GPIO_WritePin(GPIOB, SEG1_0_Pin | SEG1_1_Pin | SEG1_2_Pin | SEG1_3_Pin | SEG1_4_Pin | SEG1_5_Pin |
-							SEG1_6_Pin | SEG2_0_Pin | SEG2_1_Pin | SEG2_2_Pin | SEG2_3_Pin | SEG2_4_Pin | SEG2_5_Pin | SEG2_6_Pin, SET);
+							SEG1_6_Pin, SET);
 }
 //void clearEN();
 void clearAllLEDs(){

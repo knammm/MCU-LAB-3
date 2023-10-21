@@ -26,7 +26,7 @@ Core/Src/handle_leds.o: ../Core/Src/handle_leds.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Core/Inc/software_timer.h ../Core/Inc/handle_leds.h \
- ../Core/Inc/fsm_automatic.h
+ ../Core/Inc/fsm_automatic.h ../Core/Inc/fsm_manual.h
 
 ../Core/Inc/handle_leds.h:
 
@@ -89,3 +89,5 @@ Core/Src/handle_leds.o: ../Core/Src/handle_leds.c \
 ../Core/Inc/handle_leds.h:
 
 ../Core/Inc/fsm_automatic.h:
+
+../Core/Inc/fsm_manual.h:

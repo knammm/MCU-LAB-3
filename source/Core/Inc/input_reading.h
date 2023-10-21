@@ -11,8 +11,8 @@
 #define INC_BUTTON_H_
 
 #define NO_OF_BUTTONS		3
-#define BUTTON_IS_RELEASED	SET
-#define BUTTON_IS_PRESSED	RESET
+#define BUTTON_IS_RELEASED	GPIO_PIN_SET
+#define BUTTON_IS_PRESSED	GPIO_PIN_RESET
 
 void button_reading();
 int isButtonPressed(int);

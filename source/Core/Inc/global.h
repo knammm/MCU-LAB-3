@@ -13,6 +13,7 @@
 #include "software_timer.h"
 #include "handle_leds.h"
 #include "fsm_automatic.h"
+#include "fsm_manual.h"
 
 #define INIT		1
 #define AUTO_RED    2

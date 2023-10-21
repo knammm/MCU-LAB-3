@@ -19,7 +19,7 @@ uint16_t pins[NO_OF_BUTTONS] = {BUTTON_MODE_Pin, BUTTON_ADD_Pin, BUTTON_SET_Pin}
 GPIO_TypeDef* ports[NO_OF_BUTTONS] = {BUTTON_MODE_GPIO_Port, BUTTON_ADD_GPIO_Port, BUTTON_SET_GPIO_Port};
 
 void button_reading(){
-	for(char i = 0; i < NO_OF_BUTTONS; i++){
+	for(int i = 0; i < NO_OF_BUTTONS; i++){
 		debounceButtonBuffer3[i] = debounceButtonBuffer2[i];
 		debounceButtonBuffer2[i] = debounceButtonBuffer1[i];
 		debounceButtonBuffer1[i] = HAL_GPIO_ReadPin(ports[i], pins[i]);
