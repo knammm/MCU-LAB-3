@@ -16,5 +16,5 @@
 
 void button_reading();
 int isButtonPressed(int);
-
+void setBackButtonFlag(int);
 #endif /* INC_BUTTON_H_ */

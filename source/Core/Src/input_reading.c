@@ -49,3 +49,7 @@ int isButtonPressed(int button_index){
 	}
 	return 0;
 }
+
+void setBackButtonFlag(int index){
+	buttonFlag[index] = 1;
+}

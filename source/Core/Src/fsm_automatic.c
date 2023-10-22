@@ -84,15 +84,19 @@ void fsm_automatic_run(){
 		break;
 	}
 	// MODE BUTTON
-	if ((isButtonPressed(0) == 1) && (status == RED_GREEN || status == RED_YELLOW || status == GREEN_RED || status == YELLOW_RED)){
-		status = MOD_RED;
-		setTimer(1, 100); // timer for blinky
-		Traffic_setColor(1, AUTO_RED);
-		Traffic_setColor(2, AUTO_RED);
-		RED_sec = durationRED / 1000;
-		YELLOW_sec = durationYELLOW / 1000;
-		GREEN_sec = durationGREEN / 1000;
-		timerTraffic1 = RED_sec;
-		timerTraffic2 = 2;
+	if(isButtonPressed(0) == 1){
+		if(status == RED_GREEN || status == RED_YELLOW || status == GREEN_RED || status == YELLOW_RED){
+			status = MOD_RED;
+			setTimer(1, 100); // timer for blinky
+			Traffic_setColor(1, AUTO_RED);
+			Traffic_setColor(2, AUTO_RED);
+			RED_sec = durationRED / 1000;
+			YELLOW_sec = durationYELLOW / 1000;
+			GREEN_sec = durationGREEN / 1000;
+			timerTraffic1 = RED_sec;
+			timerTraffic2 = 2;
+		}
+		else setBackButtonFlag(0);
 	}
+
 }
