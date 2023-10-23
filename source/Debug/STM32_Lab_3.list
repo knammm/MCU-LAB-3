@@ -470,8 +470,8 @@ void fsm_automatic_run(){
  800042e:	4b1d      	ldr	r3, [pc, #116]	; (80004a4 <fsm_automatic_run+0x358>)
  8000430:	220b      	movs	r2, #11
  8000432:	601a      	str	r2, [r3, #0]
-			setTimer(1, 100); // timer for blinky
- 8000434:	2164      	movs	r1, #100	; 0x64
+			setTimer(1, 10); // timer for blinky
+ 8000434:	210a      	movs	r1, #10
  8000436:	2001      	movs	r0, #1
  8000438:	f001 f84a 	bl	80014d0 <setTimer>
 			Traffic_setColor(1, AUTO_RED);
