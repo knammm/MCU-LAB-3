@@ -85,7 +85,7 @@ void fsm_manual_run(){
 				}
 			}
 			// SET BUTTON
-			if(isButtonPressed(2)){
+			if(isButtonPressed(2) == 1){
 				durationGREEN = GREEN_sec * 1000;
 				durationYELLOW = durationRED - durationGREEN;
 			}
@@ -97,11 +97,11 @@ void fsm_manual_run(){
 				timerTraffic1 = durationRED / 1000;
 				timerTraffic2 = durationGREEN / 1000;
 				// Update buffer
-				updateBuffer(timerTraffic1, timerTraffic2);
 				setTimer(0, durationGREEN);
 				setTimerSecond(1000);
 				setTimer7SEG(10);
 				led_index = 0;
+				updateBuffer();
 				clearEN();
 			}
 			break;

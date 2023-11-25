@@ -97,20 +97,31 @@ int main(void)
   timerTraffic2 = durationGREEN / 1000;
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  SCH_Init();
+  SCH_Add_Task(timerRun, 0, 1);
+  SCH_Add_Task(timerRunSecond, 0, 1);
+  SCH_Add_Task(timerRun7SEG, 0, 1);
+  SCH_Add_Task(button_reading, 0, 1);
+//  SCH_Add_Task(fsm_manual_run, 0, 1);
+//  SCH_Add_Task(fsm_automatic_run, 0, 1);
+//  SCH_Add_Task(updateBuffer, 1,10);
+//  SCH_Add_Task(update7SEG, 1, 25);
   while (1)
   {
     /* USER CODE END WHILE */
+	  SCH_Dispatch_Tasks();
 		if(timerFlag[2] == 1){
 			setTimer(2, 100);
-			updateBuffer(timerTraffic1, timerTraffic2);
+			updateBuffer();
 		}
 		if (timer7SEG == 1){
 			setTimer7SEG(250);
 			if (led_index >= 4) led_index = 0;
-			update7SEG(led_index++);
+			update7SEG();
 		}
 		fsm_automatic_run();
 		fsm_manual_run();
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -248,10 +259,11 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	timerRun();
-	timerRun7SEG();
-	timerRunSecond();
-	button_reading();
+//	timerRun();
+//	timerRun7SEG();
+//	timerRunSecond();
+//	button_reading();
+	SCH_Update();
 }
 /* USER CODE END 4 */
 

@@ -139,8 +139,8 @@ void display7SEG(int num){
 	}
 }
 
-void update7SEG(int index){
-	switch(index){
+void update7SEG(){
+	switch(led_index){
 		case 0:
 			HAL_GPIO_WritePin(GPIOA, EN1_Pin | EN2_Pin | EN3_Pin, SET);
 			HAL_GPIO_WritePin(GPIOA, EN0_Pin, RESET);
@@ -164,11 +164,13 @@ void update7SEG(int index){
 		default:
 			break;
 	}
+	led_index++;
+	if (led_index >= 4) led_index=0;
 }
 
-void updateBuffer(int duration, int modeNUM){
-	led_buffer[0] = duration / 10;
-	led_buffer[1] = duration % 10;
-	led_buffer[2] = modeNUM / 10;
-	led_buffer[3] = modeNUM % 10;
+void updateBuffer(){
+	led_buffer[0] = timerTraffic1 / 10;
+	led_buffer[1] = timerTraffic1 % 10;
+	led_buffer[2] = timerTraffic2 / 10;
+	led_buffer[3] = timerTraffic2 % 10;;
 }

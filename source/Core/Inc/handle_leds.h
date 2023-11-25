@@ -15,8 +15,8 @@ void clearEN();
 void blinkLEDs(int, int);
 void Traffic_setColor(int, int);
 void display7SEG(int);
-void update7SEG(int);
-void updateBuffer(int, int);
+void update7SEG();
+void updateBuffer();
 
 
 #endif /* INC_HANDLE_LEDS_H_ */
