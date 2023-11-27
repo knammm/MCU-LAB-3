@@ -102,25 +102,25 @@ int main(void)
   SCH_Add_Task(timerRunSecond, 0, 1);
   SCH_Add_Task(timerRun7SEG, 0, 1);
   SCH_Add_Task(button_reading, 0, 1);
-//  SCH_Add_Task(fsm_manual_run, 0, 1);
-//  SCH_Add_Task(fsm_automatic_run, 0, 1);
-//  SCH_Add_Task(updateBuffer, 1,10);
-//  SCH_Add_Task(update7SEG, 1, 25);
+  SCH_Add_Task(update7SEG, 1, 25);
+  SCH_Add_Task(updateBuffer, 1,10);
+  SCH_Add_Task(fsm_manual_run, 0, 1);
+  SCH_Add_Task(fsm_automatic_run, 0, 1);
   while (1)
   {
     /* USER CODE END WHILE */
 	  SCH_Dispatch_Tasks();
-		if(timerFlag[2] == 1){
-			setTimer(2, 100);
-			updateBuffer();
-		}
-		if (timer7SEG == 1){
-			setTimer7SEG(250);
-			if (led_index >= 4) led_index = 0;
-			update7SEG();
-		}
-		fsm_automatic_run();
-		fsm_manual_run();
+		//if(timerFlag[2] == 1){
+		//	setTimer(2, 100);
+		//	updateBuffer();
+		//}
+		//if (timer7SEG == 1){
+		//	setTimer7SEG(250);
+		//	if (led_index >= 4) led_index = 0;
+		//	update7SEG();
+		//}
+		//fsm_automatic_run();
+		//fsm_manual_run();
 
     /* USER CODE BEGIN 3 */
   }

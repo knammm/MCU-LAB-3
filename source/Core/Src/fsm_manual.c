@@ -57,7 +57,9 @@ void fsm_manual_run(){
 			}
 			// SET BUTTON
 			if(isButtonPressed(2) == 1){
+				int prevDurationYELLOW = durationYELLOW;
 				durationYELLOW = YELLOW_sec * 1000;
+				if(durationYELLOW > durationRED) durationYELLOW = prevDurationYELLOW; // Check the logic
 			}
 			// MODE BUTTON
 			if(isButtonPressed(0) == 1){
@@ -87,7 +89,9 @@ void fsm_manual_run(){
 			// SET BUTTON
 			if(isButtonPressed(2) == 1){
 				durationGREEN = GREEN_sec * 1000;
-				durationYELLOW = durationRED - durationGREEN;
+				if(durationGREEN < durationRED){
+					durationYELLOW = durationRED - durationGREEN;
+				}
 			}
 			// MODE BUTTON
 			if(isButtonPressed(0) == 1){
@@ -97,11 +101,12 @@ void fsm_manual_run(){
 				timerTraffic1 = durationRED / 1000;
 				timerTraffic2 = durationGREEN / 1000;
 				// Update buffer
+				update7SEG();
+				updateBuffer();
 				setTimer(0, durationGREEN);
 				setTimerSecond(1000);
 				setTimer7SEG(10);
 				led_index = 0;
-				updateBuffer();
 				clearEN();
 			}
 			break;
